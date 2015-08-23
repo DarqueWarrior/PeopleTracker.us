@@ -1,0 +1,1 @@
+The packagesite.cmd takes to arguments. The first is a root folder of the ASP.net 5 project.  The second is target folder for the packages site.
