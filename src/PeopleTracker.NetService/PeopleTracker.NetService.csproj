@@ -222,7 +222,12 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\PeopleTracker.DAL\PeopleTracker.DAL.csproj">
+      <Project>{8af82867-bbe7-49a7-bcd9-1a8d514af011}</Project>
+      <Name>PeopleTracker.DAL</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
