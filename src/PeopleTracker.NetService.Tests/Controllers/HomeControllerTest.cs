@@ -9,6 +9,7 @@ namespace PeopleTracker.NetService.Tests.Controllers
    public class HomeControllerTest
    {
       [TestMethod]
+      [TestCategory("Unit")]
       public void Index()
       {
          // Arrange
