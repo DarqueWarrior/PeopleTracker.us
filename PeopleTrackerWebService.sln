@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PeopleTrackerWebService", "PeopleTrackerWebService\PeopleTrackerWebService.csproj", "{3C31F957-BE36-4997-A7B8-7E70A84CF9B1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PeopleTrackerWebService.Tests", "PeopleTrackerWebService.Tests\PeopleTrackerWebService.Tests.csproj", "{A8218664-6BCB-421D-91E2-343A9D399414}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3C31F957-BE36-4997-A7B8-7E70A84CF9B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C31F957-BE36-4997-A7B8-7E70A84CF9B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C31F957-BE36-4997-A7B8-7E70A84CF9B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C31F957-BE36-4997-A7B8-7E70A84CF9B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A8218664-6BCB-421D-91E2-343A9D399414}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8218664-6BCB-421D-91E2-343A9D399414}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8218664-6BCB-421D-91E2-343A9D399414}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8218664-6BCB-421D-91E2-343A9D399414}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
