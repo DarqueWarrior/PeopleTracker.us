@@ -19,6 +19,8 @@ namespace WebApplication1.Controllers
 
       public IActionResult Create()
       {
+         ViewData["WebApiBaseUrl"] = this.siteOptions.Options.WebApiBaseUrl;
+
          return this.View();
       }
 
