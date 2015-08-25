@@ -5,3 +5,5 @@ cd ..
 git add --all
 
 git commit -m "Removing Middle name"
+
+git push
