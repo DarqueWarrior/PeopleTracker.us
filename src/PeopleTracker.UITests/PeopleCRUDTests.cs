@@ -43,10 +43,9 @@ namespace PeopleTracker.UITests
          driver.Manage().Window.Maximize();
          driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(30));
 
-         //driver.Navigate().GoToUrl(this.baseURL);
-         //driver.FindElementByLinkText("People").Click();
-         driver.Navigate().GoToUrl(this.baseURL + "people/create");
-         //driver.FindElementByLinkText("Create New").Click();
+         driver.Navigate().GoToUrl(this.baseURL);
+         driver.FindElementByLinkText("People").Click();
+         driver.FindElementByLinkText("Create New").Click();
          driver.FindElementById("FirstName").Clear();
          driver.FindElementById("FirstName").SendKeys(browser);
          driver.FindElementById("LastName").Clear();
