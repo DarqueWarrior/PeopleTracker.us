@@ -1,4 +1,5 @@
 {
+    "userSecretsId": "aspnet5-PeopleTracker.Preview-20150825052420",
     "webroot": "wwwroot",
     "version": "1.0.0-*",
 
@@ -16,7 +17,7 @@
         "Microsoft.VisualStudio.Web.BrowserLink.Loader": "14.0.0-beta6",
         "Kestrel": "1.0.0-beta6",
         "Microsoft.Net.Http": "2.2.22",
-        "System.Net.Http": "4.0.0-beta-23109",
+        "System.Net.Http": "4.0.0",
         "Microsoft.AspNet.WebApi.Client": "5.2.3"
     },
 
