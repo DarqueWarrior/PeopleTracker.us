@@ -19,12 +19,14 @@ namespace WebApplication1.Controllers
 
       public IActionResult Create()
       {
+         ViewData["WebApiBaseUrl"] = this.siteOptions.Options.WebApiBaseUrl;
+
          return this.View();
       }
 
       [HttpPost]
       [ValidateAntiForgeryToken]
-      public ActionResult Create([Bind("ID", "FirstName", "LastName")] Person person)
+      public ActionResult Create([Bind("ID", "FirstName", "MiddleName", "LastName")] Person person)
       {
          ViewData["WebApiBaseUrl"] = this.siteOptions.Options.WebApiBaseUrl;
 
@@ -105,7 +107,7 @@ namespace WebApplication1.Controllers
 
       [HttpPost]
       [ValidateAntiForgeryToken]
-      public ActionResult Edit([Bind("ID", "FirstName", "LastName")] Person person)
+      public ActionResult Edit([Bind("ID", "FirstName", "MiddleName", "LastName")] Person person)
       {
          ViewData["WebApiBaseUrl"] = this.siteOptions.Options.WebApiBaseUrl;
 
