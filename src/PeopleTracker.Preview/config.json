@@ -1,3 +1,4 @@
 {
-   "WebApiBaseUrl": "http://localhost:5009/"
+   "WebApiBaseUrl": "http://localhost:5009/",
+   "BuildNumber": "8"
 }

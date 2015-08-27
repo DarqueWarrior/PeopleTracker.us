@@ -166,7 +166,7 @@ function Publish-DockerContainerApp {
 
             if ($hostPort -and $containerPort) {
                 $publishPort = ' -p {0}:{1}' -f $hostPort, $containerPort
-                if ($appType -eq "Web") { $envVars = ' -e "server.urls=http://*:{0}" -e "WebApiBaseUrl={1}"' -f $containerPort, $webApiBaseUrl }
+                if ($appType -eq "Web") { $envVars = ' -e "server.urls=http://*:{0}" -e "WebApiBaseUrl={1}" -e "BuildNumber={2}"' -f $containerPort, $webApiBaseUrl, $dockerTag }
                 if ($createWindowsContainer) { $containerName = ' --name {0}_{1}' -f $hostPort, $containerPort }
             }
 

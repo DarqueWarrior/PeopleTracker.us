@@ -18,15 +18,20 @@ namespace WebApplication1.Controllers
 
       public IActionResult Index()
       {
-         ViewData["WebApiBaseUrl"] = this.siteOptions.Options.WebApiBaseUrl;
+         SetCopyright();
 
          return View();
+      }
+
+      private void SetCopyright()
+      {
+         ViewData["WebApiBaseUrl"] = string.Format("{0} - build: {1}", this.siteOptions.Options.WebApiBaseUrl, this.siteOptions.Options.BuildNumber);
       }
 
       public IActionResult About()
       {
          ViewData["Message"] = "People Tracker is a demo application that shows the power of Microsoft DevOps.";
-         ViewData["WebApiBaseUrl"] = this.siteOptions.Options.WebApiBaseUrl;
+         SetCopyright();
 
          return View();
       }
@@ -34,14 +39,14 @@ namespace WebApplication1.Controllers
       public IActionResult Contact()
       {
          ViewData["Message"] = "Follow me on Twitter to stay connected to Microsoft DevOps.";
-         ViewData["WebApiBaseUrl"] = this.siteOptions.Options.WebApiBaseUrl;
+         SetCopyright();
 
          return View();
       }
 
       public IActionResult Error()
       {
-         ViewData["WebApiBaseUrl"] = this.siteOptions.Options.WebApiBaseUrl;
+         SetCopyright();
          return View("~/Views/Shared/Error.cshtml");
       }
    }
