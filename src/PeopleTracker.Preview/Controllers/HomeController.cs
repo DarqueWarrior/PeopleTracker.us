@@ -25,7 +25,7 @@ namespace WebApplication1.Controllers
 
       public IActionResult About()
       {
-         ViewData["Message"] = "Your application description page.";
+         ViewData["Message"] = "People Tracker is a demo application that shows the power of Microsoft DevOps.";
          ViewData["WebApiBaseUrl"] = this.siteOptions.Options.WebApiBaseUrl;
 
          return View();
@@ -33,7 +33,7 @@ namespace WebApplication1.Controllers
 
       public IActionResult Contact()
       {
-         ViewData["Message"] = "Your contact page.";
+         ViewData["Message"] = "Follow me on Twitter to stay connected to Microsoft DevOps.";
          ViewData["WebApiBaseUrl"] = this.siteOptions.Options.WebApiBaseUrl;
 
          return View();
