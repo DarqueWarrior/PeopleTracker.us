@@ -91,6 +91,7 @@ function Publish-DockerContainerApp {
         $runOptions = $publishProperties["DockerRunOptions"]
         $appType = $publishProperties["DockerAppType"]
         $webApiBaseUrl = $publishProperties["WebApiBaseUrl"]
+		$dockerTag = $publishProperties["DockerTag"]
         $buildOnly = [System.Convert]::ToBoolean($publishProperties["DockerBuildOnly"])
         $removeConflictingContainers = [System.Convert]::ToBoolean($publishProperties["DockerRemoveConflictingContainers"])
         $siteUrlToLaunchAfterPublish = $publishProperties["SiteUrlToLaunchAfterPublish"]
@@ -109,6 +110,7 @@ function Publish-DockerContainerApp {
         if ($runOptions) { $runOptions = " $runOptions" }
         'WebApiBaseUrl: {0}' -f $webApiBaseUrl | Write-Verbose
         'DockerAppType: {0}' -f $appType | Write-Verbose
+        'DockerTag: {0}' -f $dockerTag | Write-Verbose
         'DockerBuildOnly: {0}' -f $buildOnly | Write-Verbose
         'DockerRemoveConflictingContainers: {0}' -f $removeConflictingContainers | Write-Verbose
         'LaunchSiteAfterPublish: {0}' -f $launchSiteAfterPublish | Write-Verbose
@@ -147,11 +149,22 @@ function Publish-DockerContainerApp {
             }
         }
 
+		if($dockerTag)
+		{
+			$imageName = '{0}:{1}' -f $imageName, $dockerTag
+		}
+
         'Building Docker image: {0}' -f $imageName | Write-Verbose
         $command = 'docker{0} -H {1} build -t {2} -f "{3}" "{4}"' -f $authOptions, $dockerServerUrl, $imageName, $dockerfilePath, $packOutput
         $command | Print-CommandString
         $command | Execute-CommandString | Write-Verbose
         'The Docker image "{0}" was created successfully.' -f $imageName | Write-Output
+
+		Write-Verbose 'Time to push to Docker Hub'
+		$command = 'docker{0} -H {1} push {2}' -f $authOptions, $dockerServerUrl, $imageName
+		$command | Print-CommandString
+        $command | Execute-CommandString | Write-Verbose
+        'The Docker image "{0}" was pushed successfully.' -f $imageName | Write-Output
 
         if (!$buildOnly) {
             $publishPort = ''
