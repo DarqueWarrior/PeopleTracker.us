@@ -1,7 +1,7 @@
 [cmdletbinding(SupportsShouldProcess = $true)]
 param($publishScript, $buildNumber, $packOutput, $webApiBaseUrl)
 
-'==== Publish Settings ====' | Write-Verbose
+'==== Image Settings ====' | Write-Verbose
 'Build Number: {0}' -f $buildNumber | Write-Verbose
 'Package output path: {0}' -f $packOutput | Write-Verbose
 'Web Api Base Url: {0}' -f $webApiBaseUrl | Write-Verbose
